@@ -24,6 +24,7 @@ app.use(express.json());
 // routes
 app.use('/api', require('./src/routes/playlistRoutes'));
 app.use('/api', require('./src/routes/artistRoutes'));
+app.use('/api', require('./src/routes/trackRoutes'));
 
 
 // express listen

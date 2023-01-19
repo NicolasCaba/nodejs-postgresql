@@ -1,5 +1,6 @@
 const PlaylistModel = require('./../models/playlistModel');
 const { Op } = require('sequelize');
+const TrackModel = require('../models/trackModel');
 
 /**
  * 
@@ -33,7 +34,9 @@ const getPlaylistById = async (req, res) => {
     try {
         let { id } = req.params;
 
-        const response = await PlaylistModel.findByPk(id);
+        const response = await PlaylistModel.findByPk(id, {
+            include: [TrackModel]
+        });
 
         if(response) {
             res.status(200).send(response);
