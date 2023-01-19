@@ -3,6 +3,7 @@ const Album = require('./albumModel');
 const Playlist = require('./playlistModel');
 const Track = require('./trackModel');
 
+// entity relationship | entidad relacion
 const defineModelsRelationships = () => {
     // Album | Artist
     Artist.hasMany(Album, {
